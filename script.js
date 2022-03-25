@@ -12,6 +12,7 @@ let sixEl = document.getElementById("six");
 let sevenEl = document.getElementById("seven");
 let savbtnEl = document.getElementsByClassName("saveBtn");
 let formControlEl = document.getElementsByClassName("form-control");
+let resetbtnEl = document.getElementById("resetBtn");
 
 let timeHour = moment().hours();
 let userinputval;
@@ -65,4 +66,10 @@ for (let i = 0; i < savbtnEl.length; i++) {
     localStorage.setItem(holdingHour, userinputval);
   });
 }
+
 savedVal();
+
+resetbtnEl.addEventListener("click", function () {
+  localStorage.clear();
+  savedVal();
+});
