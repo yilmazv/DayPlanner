@@ -22,16 +22,31 @@ let holdingHour;
 console.log(parseInt(timeHour));
 
 allTextBox.forEach(function callback(value, index) {
-  console.log(`${index + 9}: ${timeHour}`);
-  if ($(index) + 9 > $(timeHour)) {
-    $(this).css("color", "red");
+  if (index + 9 > timeHour) {
+    console.log(index + 9);
+    $(formControlEl).css("backgroundColor", "#ff6961");
+    console.log("went into first if");
   }
-  if ($(index) + 9 > $(timeHour)) {
-    $(this).css("color", "red");
+  if (index + 9 < timeHour) {
+    console.log(index + 9);
+    // $(formControlEl).css("color", "#77dd77");
+    console.log("went into second if");
   }
-  if ($(index) + 9 > $(timeHour)) {
-    $(this).css("color", "red");
-  }
+
+  // if ($(index + 9).this() > $(timeHour)) {
+  //   $(this).css("color", "red");
+  //   console.log("went into first if");
+  //   console.log($(index + 9));
+  //   console.log($(timeHour));
+  // }
+  // if ($(index + 9) > $(timeHour)) {
+  //   $(this).css("color", "red");
+  //   console.log("went into second if");
+  // }
+  // if ($(index + 9) > $(timeHour)) {
+  //   $(this).css("color", "red");
+  //   console.log("went into third if");
+  // }
 });
 
 let time = moment().format("YYYY MMMM DD");
