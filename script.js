@@ -13,6 +13,15 @@ let sevenEl = document.getElementById("seven");
 let savbtnEl = document.getElementsByClassName("saveBtn");
 let formControlEl = document.getElementsByClassName("form-control");
 let resetbtnEl = document.getElementById("resetBtn");
+let rowEl = document.getElementsByClassName(".row");
+
+console.log(rowEl.length);
+
+for (let i = 0; i < formControlEl.length; i++) {
+  if (i < timeHour) {
+  }
+}
+console.log(formControlEl.length);
 
 let timeHour = moment().hours();
 let userinputval;
@@ -71,5 +80,7 @@ savedVal();
 
 resetbtnEl.addEventListener("click", function () {
   localStorage.clear();
-  savedVal();
+  location.reload();
 });
+
+function colorChange() {}
