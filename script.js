@@ -14,19 +14,25 @@ let savbtnEl = document.getElementsByClassName("saveBtn");
 let formControlEl = document.getElementsByClassName("form-control");
 let resetbtnEl = document.getElementById("resetBtn");
 let rowEl = document.getElementsByClassName(".row");
-
-console.log(rowEl.length);
-
-for (let i = 0; i < formControlEl.length; i++) {
-  if (i < timeHour) {
-  }
-}
-console.log(formControlEl.length);
+let allTextBox = document.querySelectorAll(".form-control");
 
 let timeHour = moment().hours();
 let userinputval;
 let holdingHour;
 console.log(parseInt(timeHour));
+
+allTextBox.forEach(function callback(value, index) {
+  console.log(`${index + 9}: ${timeHour}`);
+  if ($(index) + 9 > $(timeHour)) {
+    $(this).css("color", "red");
+  }
+  if ($(index) + 9 > $(timeHour)) {
+    $(this).css("color", "red");
+  }
+  if ($(index) + 9 > $(timeHour)) {
+    $(this).css("color", "red");
+  }
+});
 
 let time = moment().format("YYYY MMMM DD");
 timeEl.textContent = time;
@@ -76,11 +82,10 @@ for (let i = 0; i < savbtnEl.length; i++) {
   });
 }
 
-savedVal();
-
 resetbtnEl.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
 });
 
+savedVal();
 function colorChange() {}
