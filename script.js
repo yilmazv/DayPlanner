@@ -19,18 +19,19 @@ let allTextBox = document.querySelectorAll(".form-control");
 let timeHour = moment().hours();
 let userinputval;
 let holdingHour;
-console.log(parseInt(timeHour));
 
 allTextBox.forEach(function callback(value, index) {
   if (index + 9 > timeHour) {
-    console.log(index + 9);
-    $(formControlEl).css("backgroundColor", "#ff6961");
+    $(this.formControlEl).addClass("future");
     console.log("went into first if");
-  }
-  if (index + 9 < timeHour) {
+    console.log(timeHour);
     console.log(index + 9);
-    // $(formControlEl).css("color", "#77dd77");
+  } else if (index + 9 < timeHour) {
+    this.$(this.formControlEl).addClass("past");
     console.log("went into second if");
+  } else if (index + 9 == timeHour) {
+    this.$(this.formControlEl).addClass("present");
+    console.log("went into third if");
   }
 
   // if ($(index + 9).this() > $(timeHour)) {
